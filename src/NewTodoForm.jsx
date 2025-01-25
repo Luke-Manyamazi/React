@@ -1,14 +1,12 @@
 import { useState } from "react"
 
 export function NewTodoForm({ onSubmit }) {
-      const [newItem, setNewItem] = useState("")
+    const [newItem, setNewItem] = useState("")
 
     function handleSubmit(e) {
-        e.preventDefault(e)
-        if (newItem === "") return
-
+        e.preventDefault()
+        if (newItem.trim() === "") return
         onSubmit(newItem)
-
         setNewItem("")
     }
 
