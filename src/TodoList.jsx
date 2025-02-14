@@ -5,11 +5,7 @@ export function TodoList({ todos, toggleTodo, deleteTodo }) {
         <ul className="list">
             {todos.length === 0 && "No Todos"}
             {todos.map(todo => (
-                <TodoItem
-                    id={todo.id}
-                    completed={todo.completed}
-                    title={todo.title}
-                    key={todo.id}
+                <TodoItem {...todo} key={todo.id}
                     toggleTodo={toggleTodo}
                     deleteTodo={deleteTodo}
                 />
